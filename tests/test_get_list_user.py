@@ -14,4 +14,5 @@ def test_get_list_users_should_be_success(api_url):
 
     # THEN
     assert response.status_code == 200
+    assert response.json()['page'] == page_id
     jsonschema.validate(instance=response.json(), schema=schema)
