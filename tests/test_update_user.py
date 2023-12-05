@@ -18,4 +18,6 @@ def test_update_user_should_be_success(api_url):
 
     # THEN
     assert response.status_code == 200
+    assert response.json()['name'] == name
+    assert response.json()['job'] == job
     jsonschema.validate(instance=response.json(), schema=schema)
