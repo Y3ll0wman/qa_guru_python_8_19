@@ -7,11 +7,13 @@ import jsonschema
 def test_update_user_should_be_success(api_url):
     # GIVEN
     schema = load_schema('../json_schemas/update_user.json')
+    name = 'morpheus'
+    job = 'zion resident'
 
     # WHEN
     response = requests.put(f'{api_url}/users/2', json={
-        "name": "morpheus",
-        "job": "zion resident"
+        "name": name,
+        "job": job
     })
 
     # THEN
